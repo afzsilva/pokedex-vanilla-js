@@ -9,7 +9,7 @@ body{
 
 .content{
     /* width: 10vw; */
-    height: 100vh;
+    height: 50vh; /*TODO altera pra 100*/
     padding: 1rem;
     background-color: #fff;
 

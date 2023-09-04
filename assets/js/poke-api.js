@@ -26,7 +26,7 @@ pokeApi.getPokemonDetails = (pokemon)=>{
 }
 
 
-pokeApi.getPokemons = (offset = 0, limit = 5)=>{
+pokeApi.getPokemons = (offset = 0, limit = 1)=>{
     const url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`;
     return fetch(url)
     .then((response)=> response.json())
@@ -35,4 +35,14 @@ pokeApi.getPokemons = (offset = 0, limit = 5)=>{
     .then((detailRequest)=>Promise.all(detailRequest))
     .then((pokemonDetails)=> pokemonDetails)
     .catch((error)=>console.error(error))
+}
+
+pokeApi.getPokemon = (pokemonName)=>{
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}` ;
+    return fetch(url)
+    .then((response) => response.json())
+    .then((jsonBody) => jsonBody.abilities)
+    .then((habilidades) => habilidades)
+    //.then((habilidades) => console.log(habilidades))
+    .catch((error) => console.log(error))
 }
