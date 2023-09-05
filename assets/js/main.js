@@ -30,7 +30,6 @@ const loadPokemonItens = (offset, limit) => {
 }
 
 
-
 pokeApi.getPokemons().then((pokemons = [])=>{    
     pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join('');
     meuclick.addClick();

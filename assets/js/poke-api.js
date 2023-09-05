@@ -41,8 +41,8 @@ pokeApi.getPokemon = (pokemonName)=>{
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}` ;
     return fetch(url)
     .then((response) => response.json())
-    .then((jsonBody) => jsonBody.abilities)
-    .then((habilidades) => habilidades)
+    //.then((jsonBody) => jsonBody.abilities)
+    //.then((habilidades) => habilidades)
     //.then((habilidades) => console.log(habilidades))
     .catch((error) => console.log(error))
 }
